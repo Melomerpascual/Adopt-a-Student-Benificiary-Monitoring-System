@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 class Account{
     StudentNode top;
@@ -7,34 +8,49 @@ Scanner in = new Scanner (System.in);
 
 void createAccount(){
 
-System.out.println("Are you a student or teacher ");
+System.out.println("Are you a student or teacher ?");
 System.out.println("[1] Student ");
-System.out.println("[2] Teacher ?");
+System.out.println("[2] Teacher ");
 int input = in.nextInt();
 if(input==1){
-System.out.println("Enter your first name : ");
-    String firstname = in.next();
+     in.nextLine();
+
+    System.out.println("Enter your first name : ");
+    String firstname = in.nextLine();
+
     System.out.println("Enter your last name : ");
-    String lastname = in.next();
+    String lastname = in.nextLine();
+
     System.out.println("Enter your middle name : ");
-    String middlename=in.next();
+    String middlename=in.nextLine();
+
     System.out.println("Username : ");
-    String username = in.next();
+    String username = in.nextLine();
+
     System.out.println("Password : ");
-    String password = in.next();
+    String password = in.nextLine();
 
     System.out.println("Enter your age : ");
     int age= in .nextInt();
+    
+    
+
     System.out.println("Enter your contact number : ");
     int contactnumber = in.nextInt();
+    
+    in.nextLine();
+
     System.out.println("College");
-    String college = in.next();
+    String college = in.nextLine();
+
     System.out.println("Program ");
-    String program = in.next();
+    String program = in.nextLine();
+
     System.out.println("Section");
-    String section = in.next();
+    String section = in.nextLine();
+
     System.out.println("Year");
-    String year = in.next();
+    String year = in.nextLine();
 
 Student stud = new Student( lastname, firstname, middlename, username,password, age, contactnumber,college,program,section,year);
 StudentNode node = new StudentNode(stud);
@@ -49,19 +65,21 @@ nod=nod.next;
     nod.next=node;
 }
 }else if (input==2){
+    in.nextLine();
 System.out.println("Enter your first name : ");
-    String firstname = in.next();
+    String firstname = in.nextLine();
     System.out.println("Enter your last name : ");
-    String lastname = in.next();
+    String lastname = in.nextLine();
     System.out.println("Enter your middle name : ");
-    String middlename=in.next();
+    String middlename=in.nextLine();
     System.out.println("Username : ");
-    String username = in.next();
+    String username = in.nextLine();
     System.out.println("Password : ");
-    String password = in.next();
+    String password = in.nextLine();
 
     System.out.println("Enter your age : ");
     int age= in .nextInt();
+    
     System.out.println("Enter your contact number : ");
     int contactnumber = in.nextInt();
 Faculty faculty = new Faculty( lastname,firstname,middlename, username,password, age, contactnumber);
@@ -75,18 +93,21 @@ if(top2==null){
 top2=nodes;
 }else{
     FacultyNode nodese = top2;
-    while(nodes.next!=null){
-nodes=nodes.next;
+    while(nodese.next!=null){
+nodese=nodese.next;
     }
-    nodes.next=nodes;
+    nodese.next=nodes;
 }
 }
 
     
 
+
+
+
 }
     
-boolean login(){
+Person login(){
     
 
     System.out.println("Enter your username : ");
@@ -95,6 +116,7 @@ boolean login(){
     System.out.println("Enter your password : ");
     String password = in.next();
 
+   
     StudentNode nod = top;
 
     while (nod != null) {
@@ -105,7 +127,7 @@ boolean login(){
             stud.getPassword().equals(password)) {
 
             System.out.println("This is student");
-            return true;
+            return stud;
         }
 
         nod = nod.next;
@@ -121,20 +143,34 @@ boolean login(){
             faculty.getPassword().equals(password)) {
 
             System.out.println("This is faculty");
-            return true;
+            return faculty;
         }
 
         nodes = nodes.next;
     }
 
-    return false;
+    return null;
 }
-
-
-
 void searchAccount(String name){
+    
+ StudentNode nod = top;
 
-}
+    while (nod != null) {
 
+        Student stud = nod.getData();
 
+        if (stud.getFirstName().equalsIgnoreCase(name)||stud.getLastName().equalsIgnoreCase(name)||stud.getMiddleName().equalsIgnoreCase(name)){
+System.out.println("Found student ");
+        }
+        nod=nod.next;
+    }
+FacultyNode node = top2;
+while(node!=null){
+    Faculty faculty = node.getData();
+    if(faculty.getFirstName().equalsIgnoreCase(name)||faculty.getLastName().equalsIgnoreCase(name)||faculty.getMiddleName().equalsIgnoreCase(name)){
+System.out.println("Found Faculty");
+    }
+    node=node.next;
+    }
+    }
 }

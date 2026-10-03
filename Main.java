@@ -1,3 +1,4 @@
+import java.net.SocketTimeoutException;
 import java.util.Scanner;
 public class Main{
 
@@ -16,21 +17,28 @@ do {
 
 switch (choose){
    case 1:
-
-acc.createAccount();
-break;
+    acc.createAccount();
+    break;
 case 2 :
-    int choice =input.nextInt();
-    if(acc.login()){
+   Person user = acc.login();
+    if(user!=null){
+    System.out.println("Enter your choice [1] Search ,[2]View your Account, [3] Exit , [4]apply ");
+    int choice=input.nextInt();
         while(choice!=3){
-            System.out.println("Enter your choice [1] Search ,[2],[3]Exit");
-            choice = input.nextInt();
+            System.out.println("Enter your choice [1] Search ,[2]view your account ,[3]Exit ,[4] apply , ");
+             choice = input.nextInt();
             if(choice==1){
+                input.nextLine();
               System.out.println("Enter Name");
-              String name = input.next();
+              String name = input.nextLine();
               acc.searchAccount(name);
             }else if (choice==2){
-
+              user.viewInfo();
+            }else if (choice==3){
+break;
+            }else if (choice ==4){
+                input.nextLine();
+user.apply();
             }
         }
 System.out.println("Login succesfully");
@@ -45,36 +53,8 @@ System.out.println("Login succesfully");
 
 
 }
-
-
-
     }while(choose!=0);
 
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
