@@ -5,7 +5,9 @@ private String college;
 private String program;
 private String section;
 private String year;
-String adopters="";
+String helpNeed;
+int studentNumber;
+
 Student(String lastname,String firstname,String middlename,String username,String password,int age,int contactnumber,String college ,String program,String section,String year){
 super( lastname,firstname,middlename,username,password,age,contactnumber);
 this.college=college;
@@ -31,6 +33,23 @@ void viewInfo(){
     System.out.println("Adopters : " + this.adopters);
 }
 
+void changeCollege(){
 
+}
+
+void changeProgram(){
+
+}
+void changeSection(){
+
+}
+
+void setHelpNeed(){
+
+}
+
+void changeHelpNeed(){
+    
+}
 
 }

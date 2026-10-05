@@ -100,22 +100,16 @@ nodese=nodese.next;
 }
 }
 
-    
-
-
-
 
 }
     
 Person login(){
     
-
     System.out.println("Enter your username : ");
     String username = in.next();
 
     System.out.println("Enter your password : ");
     String password = in.next();
-
    
     StudentNode nod = top;
 

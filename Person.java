@@ -1,6 +1,5 @@
-   import java.util.Scanner;
-   
-   class Person{
+import java.util.Scanner;
+class Person{
 private String lastname;
 private String firstname;
 private String middlename;
@@ -9,6 +8,7 @@ private String password;
 private int age;
 private int contactnumber;
 String applications;
+String status;
 Scanner in = new Scanner (System.in);
 Person (String lastname,String firstname,String middlename,String username,String password,int age,int contactnumber){
 this.lastname=lastname;
@@ -19,7 +19,25 @@ this.password=password;
 this.age=age;
 this.contactnumber=contactnumber;
 }
+void setName(){
 
+}
+
+void changeUsername(){
+
+}
+
+
+void changeUsername(){
+
+}
+
+void changeAge(){
+
+}
+void changeContactNumber(){
+    
+}
 public String getFirstName(){
     return this.firstname;
 }
@@ -39,6 +57,9 @@ return this.username;
 String getPassword(){
 return this.password;
 }
+
+
+
 
 void apply(){
 System.out.println("Enter the name you want to be adopt/odopter");

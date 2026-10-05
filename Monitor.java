@@ -5,8 +5,16 @@ void viewSupport(){
 
 }
 
-void updateproggress(){
+void createGoal(){
+
+}
+
+void updateProggress(){
     
 }
+
+
+
+
 
 }

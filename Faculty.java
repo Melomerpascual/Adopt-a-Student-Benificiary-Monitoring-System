@@ -1,8 +1,8 @@
 import java.util.Scanner;
 class Faculty extends Person{
     String college;
-    String adoptees="";
-    
+    String adoptees;
+    String offer;
     Scanner in = new Scanner(System.in);
 
     
