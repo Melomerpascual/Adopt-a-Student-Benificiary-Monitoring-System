@@ -5,11 +5,16 @@ private String college;
 private String program;
 private String section;
 private String year;
-String helpNeed;
-int studentNumber;
+private String helpNeed;
+private String adopters="";
 
-Student(String lastname,String firstname,String middlename,String username,String password,int age,int contactnumber,String college ,String program,String section,String year){
-super( lastname,firstname,middlename,username,password,age,contactnumber);
+Student(){
+
+}
+
+Student(String lastname,String firstname,String middlename,String username,String password,int contactnumber,String college ,String program,String section,String year){
+super( lastname,firstname,middlename,username,password,contactnumber);
+
 this.college=college;
 this.program=program;
 this.section=section;
@@ -17,13 +22,12 @@ this.year=year;
 
 }
  
-void accept(){
-    System.out.println("Enter name");
-    String name = in.nextLine();
-    this.adopters+=name;
+void addAdopters(String name){
+    this.adopters+= " " + name;
 }
 
 
+//View Personal info
 void viewInfo(){
     super.viewInfo();
     System.out.println("Collge : " + this.college);
@@ -33,23 +37,38 @@ void viewInfo(){
     System.out.println("Adopters : " + this.adopters);
 }
 
+//change your college details 
 void changeCollege(){
-
+System.out.println("Enter you college name : ");
+String college = in.nextLine();
+this.college=college;
 }
-
+//Change your current program
 void changeProgram(){
-
+System.out.println("Enter the program you changes into : ");
+String prog = in.nextLine();
+this.program=prog;
 }
+//change section
 void changeSection(){
-
+System.out.println("Enter your new Section : ");
+String section = in.nextLine();
+this.section=section;
 }
-
+//student define what kind of help they needed
 void setHelpNeed(){
+System.out.println("Describe or list out the help that you need : ");
+String help = in.nextLine();
+if(help.isBlank()){
+System.out.println("Invalid input please put something ");
+}else {
+    this.helpNeed+=help;
+}
 
 }
 
-void changeHelpNeed(){
-    
+void removeHelpNeed(){
+    this.helpNeed= " ";
 }
 
 }

@@ -6,6 +6,9 @@ public StudentNode(Student data){
     this.data=data;
 }
 
+StudentNode(){
+    
+}
 
 Student getData(){
 return data;
