@@ -5,9 +5,9 @@ private String college;
 private String program;
 private String section;
 private String year;
-private String helpNeed;
+private String helpNeed="";
 private String adopters="";
-
+Application apply = new Application();
 Student(){
 
 }
@@ -22,9 +22,15 @@ this.year=year;
 
 }
  
+Application getApplication(){
+   return this.apply;
+}
+
+
 void addAdopters(String name){
     this.adopters+= " " + name;
 }
+
 
 
 //View Personal info
@@ -66,6 +72,13 @@ System.out.println("Invalid input please put something ");
 }
 
 }
+
+
+
+String getHelpNeed(){
+    return this.helpNeed;
+}
+
 
 void removeHelpNeed(){
     this.helpNeed= " ";

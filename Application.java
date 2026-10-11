@@ -1,10 +1,10 @@
 import java.util.Scanner;
-
 class Application{
-    private String status =" ";
+ String status = " ";
+
 
     Scanner in = new Scanner(System.in);
-void applyToFaculty(Account acc, Student student){
+void applyToFaculty(Account acc, Student student,Application apply){
 
     System.out.print("Enter the full name you want to be your adopter : ");
     String name = in.nextLine();
@@ -20,7 +20,8 @@ void applyToFaculty(Account acc, Student student){
             System.out.println("Application Succesfully");
             student.addApplications(faculty.getFirstName() + " " + faculty.getLastName());
             faculty.addApplications(student.getFirstName() + " " + student.getLastName());
-           
+           this.status="Submited";
+           faculty.reciever(apply);
         }else{
             System.out.println("No account existing : " + name);
         }
@@ -29,13 +30,16 @@ void applyToFaculty(Account acc, Student student){
 
 
 
+void viewApplication(Person account){
+    Student stud = (Student) account;
+    System.out.println("    Application   ");
+    System.out.println("Status   : " + this.status);
+    System.out.println("Applied to " + account.viewApplications() );
+    System.out.println("Help requested : " + stud.getHelpNeed());
 
-
-String statusChecker(){
-    return this.status;
 }
-    
-    
+   
+      
 
 
 void acceptStudent(Faculty acc, Account account){
@@ -46,7 +50,7 @@ void acceptStudent(Faculty acc, Account account){
         System.out.println("Error : please enter a name ");
     } else if(account.studentAccountChecker(name)){
 
-        // the REAL student from the account
+        
         Student studs = (Student) account.findStudentAccount(name);
 
         String studentName = studs.getFirstName() + " " + studs.getLastName();
@@ -54,7 +58,8 @@ void acceptStudent(Faculty acc, Account account){
 
         studs.addAdopters(facultyName);     // faculty goes to the student's adopters list
         acc.addAdoptedStudent(studentName); // student goes to the faculty's adoptees list
-
+         studs.getApplication().status="accepted";
+        
         System.out.println("Student successfully adopted!");
     } else {
         System.out.println("Error : Account doesnt exist");

@@ -5,7 +5,7 @@ class Faculty extends Person{
 private String college; 
 private boolean availability;
 private String adoptedStudent=" ";
-
+Application reciever;
 Scanner in = new Scanner(System.in);
    
     Faculty(){
@@ -22,7 +22,9 @@ this.adoptedStudent+=name;
 }
 
 
-
+void reciever(Application reciever){
+    this.reciever=reciever;
+}
 
 
 void setAvailability(){
@@ -47,6 +49,10 @@ void viewInfo(){
     System.out.println("Availability : " + this.availability);
     System.out.println("Adoption Information : ");
     System.out.println("Adopted Students : " + this.adoptedStudent);
+}
+
+void finishAdoption(){
+    
 }
 
 

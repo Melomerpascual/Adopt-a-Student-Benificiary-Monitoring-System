@@ -5,7 +5,7 @@ public class Main{
 public static void main (String[] args){
 //Account object    
 Account acc = new Account();
-//Scanner object with and the input name
+
 Scanner input = new Scanner (System.in);
 
 int choose = 100;
@@ -29,12 +29,14 @@ switch (choose){
 
   case 2 :
    Person user = acc.login(); 
-  
+    
    int choice=0;
     if(user instanceof Student){
-        Student student = (Student) user;
+       
+            Student student = (Student) user;
+            Application apply = student.getApplication(); 
         while(choice!=1){
-            System.out.println("[1] Exit "+"\n"+ "[2]VIew your account"+"\n"+"[3]Search "+"\n"+"[4] apply to faculty "+ "\n" + "[5]Change my information"+"\n" +"[6]View my applications " + "[7] My applicatin status" );
+            System.out.println("[1] Exit "+"\n"+ "[2]View your account"+"\n"+"[3]Search "+"\n"+"[4]Apply to faculty "+ "\n" + "[5]Change information"+"\n" +"[6]View my applications " );
             System.out.print("Enter your choice : ");
              choice = input.nextInt();
            
@@ -49,45 +51,44 @@ switch (choose){
              System.out.print(acc.searchAccount(name)); 
             }else if (choice ==4){
                 input.nextLine();
-               Application apply = new Application();
-                apply.applyToFaculty(acc,student);
+         apply.applyToFaculty(acc, student, apply);
             }else if (choice==5){
                 System.out.println("What information do you want to change ? [1]change college [2]change program [3]change section [4]change username [5]change password ,[6] contactnumber");
                 int in = input.nextInt();
                if(in == 1){
-              
-                      student.changeCollege();
+              student.changeCollege();
                }else if (in == 2){
-                     student.changeProgram();
+               student.changeProgram();
                }else if (in == 3){
-                       student.changeSection();
+               student.changeSection();
                }else if (in == 4){
                 user.changeUsername();
                }else if(in == 5){
                   user.changePassword();
                }else if (in == 6){
-                   user.changeContactNumber();
+                user.changeContactNumber();
 
                }
             }else if (choice == 6){
-               
+                
+               apply.viewApplication(user);
             }
         }
 
     }else if(user instanceof Faculty){
         Faculty faculty = (Faculty)user;
         while (choice != 1 ){
-             System.out.println("[1]Exit "+"\n"+ "[2]view your account"+"\n"+"[3]Search "+"\n"  + "[4]Accept"+"\n"+"[5]Change information" +"\n"+"[6]Applications");
+             System.out.println("[1]Exit "+"\n"+ "[2]View your account"+"\n"+"[3]Search "+"\n"  + "[4]Accept"+"\n"+"[5]Change information" +"\n"+"[6]Applications");
             System.out.print("Enter your choice : ");
              choice = input.nextInt();
              if(choice==1){
-
+               break;
              }else if (choice == 2){
 
              }else if (choice == 3 ){
                 
              }else if(choice == 4){
-              
+               
              }else if(choice == 5){
               System.out.println("Please choose  what you want to change [1]change username [2]change password " );
               int ch = input.nextInt();
@@ -102,8 +103,8 @@ switch (choose){
              } }else if(choice == 6){
              System.out.println(user.viewApplications());  
               }else if (choice==7){
-    Application apply = new Application();
-    apply.acceptStudent(faculty,acc );
+Application applied = new Application();
+    applied.acceptStudent(faculty,acc );
               }
     }
 }else{
@@ -117,6 +118,7 @@ switch (choose){
 
     }catch(InputMismatchException e){
      System.out.println("Error : Invalid input please enter a number");
+     String in = input.nextLine();
     }
 
 

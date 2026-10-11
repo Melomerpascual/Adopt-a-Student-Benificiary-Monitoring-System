@@ -85,7 +85,6 @@ void viewInfo(){
     System.out.println(" Personal Information ");
    System.out.println("Name : " + this.firstname+ " " + this.middlename +" "+this.lastname); 
    System.out.println("Contact Number : " + this.contactnumber);
-   System.out.println("Applications : " + this.applications);
 }
 
 }
