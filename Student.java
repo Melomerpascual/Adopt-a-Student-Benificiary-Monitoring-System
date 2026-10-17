@@ -1,13 +1,13 @@
 import java.util.Scanner;
-class Student extends Person{
+class Student extends Person implements Application{
     Scanner in = new Scanner (System.in);
 private String college;
 private String program;
 private String section;
 private String year;
-private String helpNeed="";
-private String adopters="";
-Application apply = new Application();
+private String helpNeed;
+private String adopters;
+
 Student(){
 
 }
@@ -22,13 +22,63 @@ this.year=year;
 
 }
  
-Application getApplication(){
-   return this.apply;
+ 
+
+public void accept(Account acc){
+System.out.println("Enter name :");
+String name = in.nextLine();
+
+if(acc.studentAccountChecker(name)){
+System.out.println("Error");
+}else if(acc.facultyAccountChecker(name)){
+    Person account = acc.findFacultyAccount(name);
+    Faculty faculty = (Faculty) account;
+    removeApplicant(account.getFirstName() + "" + account.getLastName() );
+    String fullName = account.getFirstName()+""+account.getLastName();
+   setAdopters(fullName);
+    account.removeApplication(getFirstName()+""+getLastName());
+    faculty.addAdoptedStudent(getFirstName()+"" +getLastName());
+    account.setApplicationStatus("Accepted");
+System.out.println("Accepted Succesfully ");
+}
+
+}
+public void apply(Account acc){
+   
+System.out.println("Enter name : ");
+String name = in.nextLine();
+
+ Person faculty = acc.findFacultyAccount(name);
+
+ if(acc.studentAccountChecker(name)){
+  System.out.println("Invalid please enter a valid faculty name");
+
+ }else if(acc.facultyAccountChecker(name)){
+    String fullName=faculty.getFirstName()+" "+faculty.getLastName();
+addApplications(fullName);
+faculty.addApplicant(getFirstName() + "" + getLastName() +"");
+setApplicationStatus("Submited");
+
+}
+}
+
+public void viewApplication(){
+    System.out.println("Application ");
+    System.out.println("Student name :" + getFirstName() +" " + getLastName());
+    System.out.println("Applied to :" + viewApplications());
+    System.out.println("Status " + getApplicationStatus());
 }
 
 
-void addAdopters(String name){
-    this.adopters+= " " + name;
+
+String getAdopters(){
+return this.adopters;
+}
+
+
+
+void setAdopters(String name){
+    this.adopters=name;
 }
 
 

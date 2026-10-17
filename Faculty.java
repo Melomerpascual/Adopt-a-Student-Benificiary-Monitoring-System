@@ -1,11 +1,11 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-class Faculty extends Person{
+class Faculty extends Person implements Application{
 
 private String college; 
 private boolean availability;
 private String adoptedStudent=" ";
-Application reciever;
+
 Scanner in = new Scanner(System.in);
    
     Faculty(){
@@ -22,9 +22,55 @@ this.adoptedStudent+=name;
 }
 
 
-void reciever(Application reciever){
-    this.reciever=reciever;
+public void viewApplication(){
+  System.out.println("Application ");
+    System.out.println("Faculty name :" + getFirstName() +" " + getLastName());
+    System.out.println("Applied to :" + viewApplications());
+    System.out.println("Status " + getApplicationStatus());
 }
+
+public void accept(Account acc){
+System.out.println("Enter name :");
+String name = in.nextLine();
+
+if(acc.facultyAccountChecker(name)){
+System.out.println("Error");
+}else if(acc.studentAccountChecker(name)){
+    Person account = acc.findStudentAccount(name);
+    Student stu = (Student) account;
+    removeApplicant(account.getFirstName() + "" + account.getLastName() );
+    addAdoptedStudent(account.getFirstName()+""+account.getLastName());
+    account.removeApplication(getFirstName()+""+getLastName());
+    stu.setAdopters(getFirstName()+"" +getLastName());
+    account.setApplicationStatus("Accepted");
+System.out.println("Accepted Succesfully ");
+}
+
+
+}
+
+
+
+
+public void apply(Account acc){
+System.out.println("Enter name : ");
+String name = in.nextLine();
+if(acc.facultyAccountChecker(name)){
+System.out.println("Error: you cant apply to faculty");
+
+}else if(acc.studentAccountChecker(name)){
+Person stud = acc.findStudentAccount(name);
+addApplications(stud.getFirstName()+stud.getLastName());
+stud.addApplicant(getFirstName()+getLastName());
+setApplicationStatus("Submited");
+}
+}
+
+
+
+
+
+
 
 
 void setAvailability(){
@@ -42,6 +88,16 @@ void setAvailability(){
     }
   
 }
+
+
+
+
+
+
+
+
+
+
 void viewInfo(){
     super.viewInfo();
     System.out.println("College : " + this.college);
@@ -51,9 +107,14 @@ void viewInfo(){
     System.out.println("Adopted Students : " + this.adoptedStudent);
 }
 
-void finishAdoption(){
+public void finishAdoption(){
     
 }
 
+void changeCollege(){
+      System.out.println("Enter the new college ");
+                String college = in.nextLine();
+this.college = college;
+}
 
 }

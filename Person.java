@@ -7,9 +7,9 @@ private String middlename;
 private String username; 
 private String password;
 private int contactnumber;
-private String applications= " ";
-
-
+private String applications ;
+private String applicant;
+private String applicationStatus;
 Scanner in = new Scanner (System.in);
 
 Person(){
@@ -26,7 +26,9 @@ this.contactnumber=contactnumber;
 }
 
 
-
+void removeApplication(String name){
+    this.applications.replace(name," ");
+}
 String viewApplications(){
     return this.applications;
 }
@@ -58,11 +60,17 @@ void changeContactNumber(){
   
 
 }
+
+
+public  String getApplicant() {
+    return this.applicant;
+}
+
 public String getFirstName(){
     return this.firstname;
 }
   void addApplications(String name){
-        this.applications+=name;
+        this.applications=name;
     }
 public String getLastName(){
     return this.lastname;
@@ -80,11 +88,30 @@ String getPassword(){
 return this.password;
 }
 
+void removeApplicant(String name){
+    this.applicant.replace(name,"");
+}
+
+
+void addApplicant(String name){
+    this.applicant+=name;
+}
 
 void viewInfo(){
     System.out.println(" Personal Information ");
    System.out.println("Name : " + this.firstname+ " " + this.middlename +" "+this.lastname); 
    System.out.println("Contact Number : " + this.contactnumber);
 }
+//get applicationstatus
+String getApplicationStatus(){
+   return this.applicationStatus;
+}
 
+void setApplicationStatus(String status){
+    this.applicationStatus=status;
+}
+
+String getApplication(){
+    return this.applications;
+}
 }

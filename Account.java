@@ -2,14 +2,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 //Account class that handle account related behaviours
 class Account{
-    StudentNode head;
-    FacultyNode head2;
+  private  StudentNode head;
+private FacultyNode head2;
 Scanner in = new Scanner (System.in);
   
 //Create account method
 void createAccount(){
     boolean checker = false;
-   
+   //need error traping for blank string inputs
     do {
         try{
        System.out.println("Are you a student or teacher ?");
@@ -22,41 +22,68 @@ void createAccount(){
 
     System.out.println("Enter your first name : ");
     String firstname = in.nextLine();
-
+    if(firstname.isBlank()){
+        System.out.println("Error : cannot be empty");
+        break;
+      }
     System.out.println("Enter your last name : ");
     String lastname = in.nextLine();
-
+      if(lastname.isBlank()){
+        System.out.println("Error : cannot be empty");
+        break;
+      }
     System.out.println("Enter your middle name : ");
     String middlename=in.nextLine();
-
+if(middlename.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     System.out.println("Username : ");
     String username = in.nextLine();
-
+if(username.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     System.out.println("Password : ");
     String password = in.nextLine();
-
+if(password.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     
     System.out.println("Enter your contact number : ");
     int contactnumber = in.nextInt();
+    
     
     in.nextLine();
 
     System.out.println("College");
     String college = in.nextLine();
-
+if(college.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     System.out.println("Program ");
     String program = in.nextLine();
-
+if(program.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     System.out.println("Section");
     String section = in.nextLine();
-    
+    if(section.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     System.out.println("Year");
     String year = in.nextLine();
-
+if(year.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     Student stud = new Student( lastname, firstname, middlename, username,password, contactnumber,college,program,section,year);
     StudentNode node = new StudentNode(stud);
-
-    if(head==null){
+  if(head==null){
     head=node;
     }else{
     StudentNode nod = head;
@@ -70,19 +97,34 @@ void createAccount(){
     in.nextLine();
    System.out.println("Enter your first name : ");
     String firstname = in.nextLine();
-
+ if(firstname.isBlank()){
+        System.out.println("Error : cannot be empty");
+        break;
+      }
     System.out.println("Enter your last name : ");
     String lastname = in.nextLine();
-
+      if(lastname.isBlank()){
+        System.out.println("Error : cannot be empty");
+        break;
+      }
     System.out.println("Enter your middle name : ");
     String middlename=in.nextLine();
-
+if(middlename.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     System.out.println("Username : ");
     String username = in.nextLine();
-
+if(username.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     System.out.println("Password : ");
     String password = in.nextLine();
-    
+    if(password.isBlank()){
+System.out.println("Error : cannot be empty");
+        break;
+}
     System.out.println("Enter your contact number : ");
     int contactnumber = in.nextInt();
 
@@ -113,7 +155,7 @@ checker = false;
 
 
 
-Person findStudentAccount(String name){
+    Person findStudentAccount(String name){
     StudentNode stud = head;
  
     while(stud!=null){
@@ -157,11 +199,32 @@ return false;
 
 
 
+//check if faculty exist using its namme
 
+boolean facultyAccountChecker(String name){
+    try{
 
-boolean FacultyAccountChecker(String name){
-    return findFacultyAccount(name) != null;
+    }catch(NullPointerException e){
+    System.out.println("Error theres no account yet : ");
+    }
+FacultyNode node = head2;
+String facultyname=node.getData().getFirstName();
+String facultylastname = node.getData().getLastName();
+while(node != null ){
+if(name.equalsIgnoreCase(facultyname) ||name.equalsIgnoreCase(facultylastname) ){
+return true;
 }
+
+     node = node.next;
+}
+return false ;
+}
+
+
+
+
+
+
 
 // returns the real faculty, or null if not found
 Person findFacultyAccount(String name){
@@ -219,9 +282,9 @@ Person login(){
 
     while (nod != null) {
 
-        Student stud = nod.getData();
+     Student stud =nod.getData();
 
-        if (stud.getUsername().equals(username) &&
+         if (stud.getUsername().equals(username) &&
             stud.getPassword().equals(password)) {
 
             System.out.println("This is student");
