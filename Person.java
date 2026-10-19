@@ -56,12 +56,7 @@ void changeContactNumber(){
     checker = true;
     }
     }while(checker);
-   
-  
-
 }
-
-
 public  String getApplicant() {
     return this.applicant;
 }

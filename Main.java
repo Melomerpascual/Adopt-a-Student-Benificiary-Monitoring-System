@@ -15,8 +15,8 @@ int choose = 100;
 do {
 
     System.out.println("__________________");
-    System.out.println("    EduNet care   ");
-    System.out.println("[1] Create account");
+    System.out.println("****EduNet care****");
+    System.out.println("[1] Create a account");
     System.out.println("[2] Login");
     System.out.println("___________________");
     choose=input.nextInt();    
@@ -137,8 +137,8 @@ switch (choose){
 break;
  }
 }
-             
-                }
+      
+  }
              
              else if(choice == 6){
                faculty.viewApplication();
@@ -169,4 +169,8 @@ faculty.accept(acc);
 
 
 }
+
+
+
+
 }

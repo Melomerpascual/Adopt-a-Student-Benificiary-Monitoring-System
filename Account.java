@@ -15,9 +15,13 @@ void createAccount(){
    //need error traping for blank string inputs
     do {
         try{
+       System.out.println("==============================="); 
+       System.out.println("=========EduNet Care===========");
+       System.out.println("===============================");
        System.out.println("Are you a student or teacher ?");
         System.out.println("[1] Student ");
         System.out.println("[2] Teacher ");
+        System.out.println("------------------------------");
         int input = in.nextInt();
         //Student
           if(input==1){
@@ -106,13 +110,13 @@ System.out.println("Error : cannot be empty");
     in.nextLine();
    System.out.println("Enter your first name : ");
     String firstname = in.nextLine();
- if(firstname.isBlank()){
+ if(firstname.trim().isBlank()){
         System.out.println("Error : cannot be empty");
         break;
       }
     System.out.println("Enter your last name : ");
     String lastname = in.nextLine();
-      if(lastname.isBlank()){
+      if(lastname.trim().isBlank()){
         System.out.println("Error : cannot be empty");
         break;
       }
@@ -122,22 +126,29 @@ if(middlename.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
+
+System.out.println("Enter your College ");
+String college = in.nextLine();
+if (college.trim().isBlank()) {
+    System.out.println("Error please put a value:");
+}
+
     System.out.println("Username : ");
     String username = in.nextLine();
-if(username.isBlank()){
+if(username.trim().isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
     System.out.println("Password : ");
     String password = in.nextLine();
-    if(password.isBlank()){
+    if(password.trim().isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
     System.out.println("Enter your contact number : ");
     String contactnumber = in.nextLine();
 
-    Faculty faculty = new Faculty(lastname,firstname,middlename, username,password, contactnumber);
+    Faculty faculty = new Faculty(lastname,firstname,middlename,college, username,password, contactnumber);
 
     FacultyNode nodes = new FacultyNode(faculty);
 
@@ -172,13 +183,6 @@ stud=stud.next;
     }
     return null;
 }
-
-
-
-
-
-
-
 
 
 
@@ -251,24 +255,6 @@ Person findFacultyAccount(String name){
 
     return null;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

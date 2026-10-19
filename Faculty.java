@@ -12,7 +12,7 @@ Scanner in = new Scanner(System.in);
         
     }
     
-   Faculty(String lastname,String firstname,String middlename,String username,String password,String contactnumber){
+   Faculty(String lastname,String firstname,String middlename,String college,String username,String password,String contactnumber){
 super(lastname,firstname,middlename,username,password,contactnumber);
    
    } 
@@ -23,7 +23,7 @@ this.adoptedStudent+=name;
 
 
 public void viewApplication(){
-  System.out.println("Application ");
+System.out.println("==========Application============");
     System.out.println("Faculty name :" + getFirstName() +" " + getLastName());
     System.out.println("Applied to :" + viewApplications());
     System.out.println("Status " + getApplicationStatus());

@@ -22,8 +22,7 @@ this.year=year;
 
 }
  
- 
-//need ng existing application before accepting
+
 public void accept(Account acc){
     try{
      System.out.println("Enter name :");
@@ -69,7 +68,7 @@ faculty.addApplicant(getFirstName() + "" + getLastName() +"");
 setApplicationStatus("Submited");
 
 }
-   }catch(NullPointerException E ){
+   }catch(NullPointerException e ){
 System.out.println("Error : theres no account Existing yet");
    }
 
