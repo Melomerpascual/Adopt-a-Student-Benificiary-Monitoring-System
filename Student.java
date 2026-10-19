@@ -12,7 +12,7 @@ Student(){
 
 }
 
-Student(String lastname,String firstname,String middlename,String username,String password,int contactnumber,String college ,String program,String section,String year){
+Student(String lastname,String firstname,String middlename,String username,String password,String contactnumber,String college ,String program,String section,String year){
 super( lastname,firstname,middlename,username,password,contactnumber);
 
 this.college=college;
@@ -23,9 +23,10 @@ this.year=year;
 }
  
  
-
+//need ng existing application before accepting
 public void accept(Account acc){
-System.out.println("Enter name :");
+    try{
+     System.out.println("Enter name :");
 String name = in.nextLine();
 
 if(acc.studentAccountChecker(name)){
@@ -41,10 +42,18 @@ System.out.println("Error");
     account.setApplicationStatus("Accepted");
 System.out.println("Accepted Succesfully ");
 }
+    }catch(NullPointerException e){
+        System.out.println("Error theres no account existing yet ");
+    }
+
 
 }
+
+
+
+
 public void apply(Account acc){
-   
+   try{
 System.out.println("Enter name : ");
 String name = in.nextLine();
 
@@ -60,13 +69,17 @@ faculty.addApplicant(getFirstName() + "" + getLastName() +"");
 setApplicationStatus("Submited");
 
 }
+   }catch(NullPointerException E ){
+System.out.println("Error : theres no account Existing yet");
+   }
+
 }
 
 public void viewApplication(){
-    System.out.println("Application ");
+    System.out.println("______________________Application____________________");
     System.out.println("Student name :" + getFirstName() +" " + getLastName());
     System.out.println("Applied to :" + viewApplications());
-    System.out.println("Status " + getApplicationStatus());
+    System.out.println("Status :" + getApplicationStatus());
 }
 
 

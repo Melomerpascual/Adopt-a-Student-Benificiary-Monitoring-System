@@ -6,7 +6,7 @@ private String firstname;
 private String middlename;
 private String username; 
 private String password;
-private int contactnumber;
+private String contactnumber;
 private String applications ;
 private String applicant;
 private String applicationStatus;
@@ -16,7 +16,7 @@ Person(){
 
 }
 
-Person (String lastname,String firstname,String middlename,String username,String password,int contactnumber){
+Person (String lastname,String firstname,String middlename,String username,String password,String contactnumber){
 this.lastname=lastname;
 this.firstname=firstname;
 this.middlename=middlename;
@@ -49,7 +49,7 @@ void changeContactNumber(){
     do{
          try{
       System.out.println("Enter your new mobile number : ");
-    int mobile=in.nextInt();
+    String mobile=in.nextLine();
     this.contactnumber=mobile;
     checker = false;  
     }catch(InputMismatchException e){
@@ -111,7 +111,5 @@ void setApplicationStatus(String status){
     this.applicationStatus=status;
 }
 
-String getApplication(){
-    return this.applications;
-}
+
 }

@@ -12,7 +12,7 @@ Scanner in = new Scanner(System.in);
         
     }
     
-   Faculty(String lastname,String firstname,String middlename,String username,String password,int contactnumber){
+   Faculty(String lastname,String firstname,String middlename,String username,String password,String contactnumber){
 super(lastname,firstname,middlename,username,password,contactnumber);
    
    } 
@@ -29,7 +29,10 @@ public void viewApplication(){
     System.out.println("Status " + getApplicationStatus());
 }
 
+
+
 public void accept(Account acc){
+    try{
 System.out.println("Enter name :");
 String name = in.nextLine();
 
@@ -46,6 +49,10 @@ System.out.println("Error");
 System.out.println("Accepted Succesfully ");
 }
 
+    }catch(NullPointerException e){
+     System.out.println("Error theres no account existing yet");
+    }
+
 
 }
 
@@ -53,6 +60,7 @@ System.out.println("Accepted Succesfully ");
 
 
 public void apply(Account acc){
+    try{
 System.out.println("Enter name : ");
 String name = in.nextLine();
 if(acc.facultyAccountChecker(name)){
@@ -64,15 +72,13 @@ addApplications(stud.getFirstName()+stud.getLastName());
 stud.addApplicant(getFirstName()+getLastName());
 setApplicationStatus("Submited");
 }
+    }catch(NullPointerException e){
+System.out.println("Error theres no account existing yet");
+    }
+
 }
 
-
-
-
-
-
-
-
+/* 
 void setAvailability(){
 
     try{
@@ -89,7 +95,7 @@ void setAvailability(){
   
 }
 
-
+*/
 
 
 

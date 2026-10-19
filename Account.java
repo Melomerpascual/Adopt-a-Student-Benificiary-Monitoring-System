@@ -1,5 +1,8 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+//regex input error handling
 //Account class that handle account related behaviours
 class Account{
   private  StudentNode head;
@@ -52,10 +55,16 @@ System.out.println("Error : cannot be empty");
 }
     
     System.out.println("Enter your contact number : ");
-    int contactnumber = in.nextInt();
+    String contactnumber = in.nextLine();
+    if(contactnumber.contains(".")){
+     System.out.println("Error : you cannot put . ");
+     break;
+    }else if(contactnumber.length()!=11){
+     System.out.println("Error please put a valid number ");
+     break;
+    }
     
-    
-    in.nextLine();
+
 
     System.out.println("College");
     String college = in.nextLine();
@@ -126,7 +135,7 @@ System.out.println("Error : cannot be empty");
         break;
 }
     System.out.println("Enter your contact number : ");
-    int contactnumber = in.nextInt();
+    String contactnumber = in.nextLine();
 
     Faculty faculty = new Faculty(lastname,firstname,middlename, username,password, contactnumber);
 
@@ -150,10 +159,6 @@ checker = false;
    }
     }while(checker);
 }
-
-
-
-
 
     Person findStudentAccount(String name){
     StudentNode stud = head;
@@ -341,8 +346,8 @@ Person login(){
 
 //Search account method
 String searchAccount(String name){
-    
- StudentNode nod = head;
+    try{
+StudentNode nod = head;
 
     while (nod != null) {
 
@@ -364,6 +369,9 @@ while(node!=null){
     }
     node=node.next;
     }
-    return "Not found";
-    }
+    
+    }catch(NullPointerException e){
+    System.out.println("Error no account existing yet");
+    }return "Not found";
+}
 }

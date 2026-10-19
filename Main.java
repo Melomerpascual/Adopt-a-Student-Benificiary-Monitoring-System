@@ -37,7 +37,7 @@ switch (choose){
 
         while(choice!=1){
 
-        System.out.println("[1] Exit "+"\n"+ "[2] View your account"+"\n"+"[3] Search "+"\n"+"[4] Apply to faculty "+ "\n" + "[5] Change information"+"\n" +"[6] View my applications "+"\n"+"[7] View Applicants"+"\n"+ "[8] Accept" );
+        System.out.println("[1] Exit "+"\n"+ "[2] View your account"+"\n"+"[3] Search "+"\n"+"[4] Apply to faculty "+ "\n" + "[5] Change information"+"\n" +"[6] View my application "+"\n"+"[7] View Applicants"+"\n"+ "[8] Accept" );
         System.out.print("Enter your choice :");
         choice = input.nextInt();
            
@@ -65,8 +65,11 @@ switch (choose){
            
 
             }else if (choice==5){
-                System.out.println("What information do you want to change ?"+"\n"+"[1] Change college"+"\n"+ "[2] Change program "+"\n"+"[3] Change section"+"\n"+"[4] Change username"+"\n"+"[5] Change password "+"\n"+"[6] Contactnumber"+"\n"+"[7] Set help need");
-                int in = input.nextInt();
+                int in =0;
+                while(in!=8){
+                     System.out.println("What information do you want to change ?"+"\n"+"[1] Change college"+"\n"+ "[2] Change program "+"\n"+"[3] Change section"+"\n"+"[4] Change username"+"\n"+"[5] Change password "+"\n"+"[6] Contactnumber"+"\n"+"[7] Set help need"+"\n"+"[8] Exit");
+                 in = input.nextInt();
+                
                if(in == 1){
               student.changeCollege();
                }else if (in == 2){
@@ -82,9 +85,17 @@ switch (choose){
 
                }else if (in==7){
                 student.setHelpNeed();
-               }
+               }else if(in == 8){
+                    break;
+               }}
+               
             }else if (choice == 6){
-              System.out.println(student.getApplication());  
+                if(user.getApplicationStatus()==null){
+                     System.out.println("You dont have any application yet");
+                }else {
+                                   student.viewApplication(); 
+
+                }
             }else if(choice == 7 ){
                 System.out.println( user.getApplicant());  
             }else if (choice == 8){
@@ -95,42 +106,11 @@ switch (choose){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
     }else if(user instanceof Faculty){
         Faculty faculty = (Faculty)user;
         while (choice != 1 ){
-            System.out.println("What information do you want to change ?"+"\n"+"[1] Change college"+"\n"+ "[2] Change program "+"\n"+"[3] Change section"+"\n"+"[4] Change username"+"\n"+" [5]change password "+"\n"+"[6] contactnumber"+"\n"+"[7]Set help need");
-            System.out.print("Enter your choice :");
+             System.out.println("[1] Exit "+"\n"+ "[2] View your account"+"\n"+"[3] Search "+"\n"+"[4] Apply to student"+ "\n" + "[5] Change information"+"\n" +"[6] View my applications "+"\n"+"[7] View Applicants"+"\n"+ "[8] Accept" );
              choice = input.nextInt();
              if(choice==1){
                break;
@@ -143,21 +123,30 @@ switch (choose){
             }else if(choice == 4){
                faculty.apply(acc); 
              }else if(choice == 5){
-              System.out.println("Please choose  what you want to change [1]change username"+"\n"+ "[2]change password " +"\n"+"[3] College" );
-              int ch = input.nextInt();
+               int ch = 0;
+                while(ch!=-1){ 
+ System.out.println("Please choose  what you want to change [1]change username"+"\n"+ "[2]change password " +"\n"+"[3] Contactnumber"+"\n"+"[4] Exit" );
+               ch = input.nextInt();
               if(ch == 1){
-              user.changeUsername();
+               user.changeUsername(); 
               }else if (ch == 2){
                user.changePassword();
               }else if(ch == 3){
-              faculty.changeCollege();
-             } }else if(choice == 6){
-             System.out.println(user.viewApplications());  
+              user.changeContactNumber();
+             } else if(ch == 4){   
+break;
+ }
+}
+             
+                }
+             
+             else if(choice == 6){
+               faculty.viewApplication();
               }else if (choice == 7){
                   System.out.println(user.getApplicant());
 
               }else if (choice == 8){
-
+faculty.accept(acc);
               }
     }
 }else{

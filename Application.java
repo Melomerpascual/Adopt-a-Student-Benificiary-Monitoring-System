@@ -12,7 +12,7 @@ interface Application{
  void viewApplication();
 
 default void cancelApplication(){
-System.out.println("Enter name you ");
+
 }
 
 
@@ -20,9 +20,7 @@ default void finishAdoption(){
 
 }
 
-default void cancelAdoption(){
-    
-}
+
 
 
 
