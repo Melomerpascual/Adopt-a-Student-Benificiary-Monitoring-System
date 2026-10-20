@@ -39,11 +39,11 @@ System.out.println("Error");
 }else if(acc.facultyAccountChecker(name)){
     Person account = acc.findFacultyAccount(name);
     Faculty faculty = (Faculty) account;
-    removeApplicant(account.getFirstName() + "" + account.getLastName() );
-    String fullName = account.getFirstName()+""+account.getLastName();
+    removeApplicant(account.getFirstName() + " " + account.getLastName() );
+    String fullName = account.getFirstName()+" "+account.getLastName();
    setAdopters(fullName);
-    account.removeApplication(getFirstName()+""+getLastName());
-    faculty.addAdoptedStudent(getFirstName()+"" +getLastName());
+    account.removeApplication(getFirstName()+" "+getLastName());
+    faculty.addAdoptedStudent(getFirstName()+" " +getLastName());
     account.setApplicationStatus("Accepted");
 System.out.println("Accepted Succesfully ");
 }
