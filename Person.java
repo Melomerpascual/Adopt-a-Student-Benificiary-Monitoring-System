@@ -10,6 +10,7 @@ private String contactnumber;
 private String applications ;
 private String applicant;
 private String applicationStatus;
+private String college;
 Scanner in = new Scanner (System.in);
 
 Person(){
@@ -48,7 +49,7 @@ void changeContactNumber(){
     boolean checker =false;
     do{
          try{
-      System.out.println("Enter your new mobile number : ");
+    System.out.println("Enter your new mobile number : ");
     String mobile=in.nextLine();
     this.contactnumber=mobile;
     checker = false;  
