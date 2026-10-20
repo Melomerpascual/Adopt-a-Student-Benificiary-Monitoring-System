@@ -77,26 +77,6 @@ System.out.println("Error theres no account existing yet");
 
 }
 
-/* 
-void setAvailability(){
-
-    try{
-    System.out.println("Please choose : " + "[1] Available " +"\n" + "[2] Not available");
-    int input = in.nextInt();
-    if(input==1){
-     this.availability=true;
-    }else if (input==2){
-    this.availability=false;
-    } 
-    }catch(InputMismatchException e){
-    System.out.println("Error invalid input please enter number ");
-    }
-  
-}
-
-*/
-
-
 
 
 

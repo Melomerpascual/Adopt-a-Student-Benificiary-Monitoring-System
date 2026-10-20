@@ -70,7 +70,7 @@ String name = in.nextLine();
  }else if(acc.facultyAccountChecker(name)){
     String fullName=faculty.getFirstName()+" "+faculty.getLastName();
 addApplications(fullName);
-faculty.addApplicant(getFirstName() + "" + getLastName() +"");
+faculty.addApplicant(getFirstName() + " " + getLastName() +"");
 setApplicationStatus("Submited");
 
 }
