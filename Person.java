@@ -28,7 +28,7 @@ this.contactnumber=contactnumber;
 
 
 void removeApplication(String name){
-    this.applications.replace(name," ");
+    this.applications.replace(name,"");
 }
 String viewApplications(){
     return this.applications;
@@ -90,6 +90,9 @@ void removeApplicant(String name){
 
 
 void addApplicant(String name){
+    if(this.applicants!=null){
+        this.applicants+=", ";
+    }
     this.applicant+=name;
 }
 
