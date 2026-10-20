@@ -40,10 +40,10 @@ System.out.println("Error");
 }else if(acc.studentAccountChecker(name)){
     Person account = acc.findStudentAccount(name);
     Student stu = (Student) account;
-    removeApplicant(account.getFirstName() + "" + account.getLastName() );
-    addAdoptedStudent(account.getFirstName()+""+account.getLastName());
-    account.removeApplication(getFirstName()+""+getLastName());
-    stu.setAdopters(getFirstName()+"" +getLastName());
+    removeApplicant(account.getFirstName() + " " + account.getLastName() );
+    addAdoptedStudent(account.getFirstName()+" "+account.getLastName());
+    account.removeApplication(getFirstName()+" "+getLastName());
+    stu.setAdopters(getFirstName()+" " +getLastName());
     account.setApplicationStatus("Accepted");
 System.out.println("Accepted Succesfully ");
 }
@@ -67,8 +67,8 @@ System.out.println("Error: you cant apply to faculty");
 
 }else if(acc.studentAccountChecker(name)){
 Person stud = acc.findStudentAccount(name);
-addApplications(stud.getFirstName()+stud.getLastName());
-stud.addApplicant(getFirstName()+getLastName());
+addApplications(stud.getFirstName()+" " +stud.getLastName());
+stud.addApplicant(getFirstName()+ " " + getLastName());
 setApplicationStatus("Submited");
 }
     }catch(NullPointerException e){
