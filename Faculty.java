@@ -1,9 +1,8 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 class Faculty extends Person implements Application{
 
 private String college; 
-private boolean availability;
+private int facultyId;
 private String adoptedStudent=" ";
 
 Scanner in = new Scanner(System.in);
@@ -12,9 +11,9 @@ Scanner in = new Scanner(System.in);
         
     }
     
-   Faculty(String lastname,String firstname,String middlename,String college,String username,String password,String contactnumber){
+   Faculty(String lastname,String firstname,String middlename,String college,String username,String password,String contactnumber,int facultyId){
 super(lastname,firstname,middlename,username,password,contactnumber);
-   
+   this.facultyId=facultyId;
    } 
 
 void addAdoptedStudent(String name){
@@ -108,7 +107,6 @@ void viewInfo(){
     super.viewInfo();
     System.out.println("College : " + this.college);
     
-    System.out.println("Availability : " + this.availability);
     System.out.println("Adoption Information : ");
     System.out.println("Adopted Students : " + this.adoptedStudent);
 }

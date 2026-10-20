@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
+
 //regex input error handling
 //Account class that handle account related behaviours
 class Account{
@@ -27,38 +27,38 @@ void createAccount(){
           if(input==1){
         in.nextLine();
 
-    System.out.println("Enter your first name : ");
+    System.out.print("Enter your first name : ");
     String firstname = in.nextLine();
     if(firstname.isBlank()){
         System.out.println("Error : cannot be empty");
         break;
       }
-    System.out.println("Enter your last name : ");
+    System.out.print("Enter your last name : ");
     String lastname = in.nextLine();
       if(lastname.isBlank()){
-        System.out.println("Error : cannot be empty");
+        System.out.print("Error : cannot be empty");
         break;
       }
-    System.out.println("Enter your middle name : ");
+    System.out.print("Enter your middle name : ");
     String middlename=in.nextLine();
 if(middlename.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    System.out.println("Username : ");
+    System.out.print("Username : ");
     String username = in.nextLine();
 if(username.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    System.out.println("Password : ");
+    System.out.print("Password : ");
     String password = in.nextLine();
 if(password.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
     
-    System.out.println("Enter your contact number : ");
+    System.out.print("Enter your contact number : ");
     String contactnumber = in.nextLine();
     if(contactnumber.contains(".")){
      System.out.println("Error : you cannot put . ");
@@ -69,32 +69,36 @@ System.out.println("Error : cannot be empty");
     }
     
 
+System.out.print("Enter your Student Id :");
+int studentId = in.nextInt();
 
-    System.out.println("College");
+
+
+    System.out.print("College :");
     String college = in.nextLine();
 if(college.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    System.out.println("Program ");
+    System.out.print("Program :");
     String program = in.nextLine();
 if(program.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    System.out.println("Section");
+    System.out.print("Section :");
     String section = in.nextLine();
     if(section.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    System.out.println("Year");
+    System.out.print("Year");
     String year = in.nextLine();
 if(year.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    Student stud = new Student( lastname, firstname, middlename, username,password, contactnumber,college,program,section,year);
+    Student stud = new Student( lastname, firstname, middlename, username,password, contactnumber,college,program,section,year,studentId);
     StudentNode node = new StudentNode(stud);
   if(head==null){
     head=node;
@@ -127,6 +131,11 @@ System.out.println("Error : cannot be empty");
         break;
 }
 
+
+System.out.println("Enter your faculty Id");
+int facultyId=in.nextInt();
+
+
 System.out.println("Enter your College ");
 String college = in.nextLine();
 if (college.trim().isBlank()) {
@@ -148,7 +157,7 @@ System.out.println("Error : cannot be empty");
     System.out.println("Enter your contact number : ");
     String contactnumber = in.nextLine();
 
-    Faculty faculty = new Faculty(lastname,firstname,middlename,college, username,password, contactnumber);
+    Faculty faculty = new Faculty(lastname,firstname,middlename,college, username,password, contactnumber,facultyId);
 
     FacultyNode nodes = new FacultyNode(faculty);
 
@@ -205,9 +214,6 @@ System.out.println("Error : Theres no registered Faculty Account existing yet ")
 return false;
 }
 
-
-
-
 //check if faculty exist using its namme
 
 boolean facultyAccountChecker(String name){
@@ -230,11 +236,6 @@ return false ;
 }
 
 
-
-
-
-
-
 // returns the real faculty, or null if not found
 Person findFacultyAccount(String name){
 
@@ -255,9 +256,6 @@ Person findFacultyAccount(String name){
 
     return null;
 }
-
-
-
 
 
   //Login Method  
@@ -303,30 +301,6 @@ Person login(){
 
     return null;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

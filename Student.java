@@ -7,21 +7,27 @@ private String section;
 private String year;
 private String helpNeed;
 private String adopters;
+private int studentId;
 
 Student(){
 
 }
 
-Student(String lastname,String firstname,String middlename,String username,String password,String contactnumber,String college ,String program,String section,String year){
+Student(String lastname,String firstname,String middlename,String username,String password,String contactnumber,String college ,String program,String section,String year,int studentId){
 super( lastname,firstname,middlename,username,password,contactnumber);
 
 this.college=college;
 this.program=program;
 this.section=section;
 this.year=year;
-
+this.studentId=studentId;
 }
  
+
+public void finishAdoption(){
+
+}
+
 
 public void accept(Account acc){
     try{

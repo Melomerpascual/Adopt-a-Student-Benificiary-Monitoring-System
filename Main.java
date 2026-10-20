@@ -8,7 +8,7 @@ Account acc = new Account();
 
 Scanner input = new Scanner (System.in);
 
-int choose = 100;
+int choose = 0;
 
  while(true){
     try{

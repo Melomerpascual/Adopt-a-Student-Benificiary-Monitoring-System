@@ -1,8 +1,6 @@
 import java.util.Scanner;
 interface Application{
 
-
-
     Scanner in = new Scanner(System.in);
  void apply(Account acc);
       
@@ -16,9 +14,7 @@ default void cancelApplication(){
 }
 
 
-default void finishAdoption(){
-
-}
+void finishAdoption();
 
 
 
