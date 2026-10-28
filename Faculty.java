@@ -40,7 +40,11 @@ String getApplicant(){
 
 @Override
 void viewInfo(){
-    super.viewInfo();
+           
+    System.out.println("First Name :"+getFirstName());
+    System.out.println("Middle Name :" + getMiddleName());
+    System.out.println("Last name :" + getLastName());
+System.out.println("Contact Number :" + getContactNumber());
     System.out.println("College :" + this.college);
     System.out.println("Faculty id :" + facultyId);
     System.out.println("Adoption Information :"+ adoptedStudent);

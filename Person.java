@@ -23,6 +23,11 @@ this.contactnumber=contactnumber;
 
 
 
+String getContactNumber(){
+    return contactnumber;
+}
+
+
 void changeFirstName(){
     System.out.println("Enter your First Name");
     String name = in.nextLine();
@@ -106,12 +111,9 @@ String getPassword(){
 return this.password;
 }
 
-void viewInfo(){
-    System.out.println("__________________________");
-   System.out.println("    PERSONAL INFORMATION    ");
-    System.out.println("__________________________");
-   System.out.println("Name : " + this.firstName+ " " + this.middleName +" "+this.lastName); 
-   System.out.println("Contact Number : " + this.contactnumber);
-}
+
+public abstract void viewInfo();
+
+
 
 }

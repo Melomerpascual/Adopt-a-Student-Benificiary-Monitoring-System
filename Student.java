@@ -65,11 +65,15 @@ return this.applicationStatus;
 
 
     @Override
-void viewInfo(){
-    super.viewInfo();
-        System.out.println("Student Id :"+studentId);
-
-    System.out.println("College : " + this.college);
+public void viewInfo(){
+    
+       
+    System.out.println("First Name :"+getFirstName());
+    System.out.println("Middle Name :" + getMiddleName());
+    System.out.println("Last name :" + getLastName());
+System.out.println("Contact Number :" + getContactNumber());
+    System.out.println("Student Id :"+studentId);
+     System.out.println("College : " + this.college);
     System.out.println("Program : " + this.program);
     System.out.println("Section : " + this.section);
     System.out.println("Year : " + this.year);
