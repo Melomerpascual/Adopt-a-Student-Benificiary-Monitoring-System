@@ -39,7 +39,7 @@ String getApplicant(){
 
 
 @Override
-void viewInfo(){
+public  void viewInfo(){
            
     System.out.println("First Name :"+getFirstName());
     System.out.println("Middle Name :" + getMiddleName());
