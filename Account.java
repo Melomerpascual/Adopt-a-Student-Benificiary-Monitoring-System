@@ -16,14 +16,14 @@ void createAccount(){
     do {
         try{
             System.out.println("""
-            ------------------------------
+          ___________________________
             CREATE ACCOUNT
             Are you a student or teacher 
-            [1] Student
-            [2] Teacher
-            [3] Exit
-            ------------------------------""");
-       
+            1. Student
+            2. Teacher
+            3. Exit
+           __________________________""");
+        
         int input = in.nextInt();
         in.nextLine();
         
@@ -77,7 +77,7 @@ System.out.println("Error : cannot be empty");
     }
     
 
-System.out.print("Enter your Student ID :");
+System.out.print("Enter your Student ID : ");
 String studentId = in.nextLine();
 if(studentId.isBlank()){
 System.out.println("Error : cannot be empty");
@@ -93,19 +93,19 @@ System.out.println("Error : cannot be empty");
         break;
 }
 
-    System.out.print("Program(e.g. BSIT) :");
+    System.out.print("Program(e.g. BSIT) : ");
     String program = in.nextLine();
 if(program.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    System.out.print("Section :");
+    System.out.print("Section : ");
     String section = in.nextLine();
     if(section.isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    System.out.print("Year level: ");
+    System.out.print("Year level : ");
     String year = in.nextLine();
 if(year.isBlank()){
 System.out.println("Error : cannot be empty");
@@ -147,7 +147,7 @@ System.out.println("Error : cannot be empty");
 }
 
 
-System.out.print("Enter your faculty Id :");
+System.out.print("Enter your faculty ID :");
 String facultyId=in.nextLine();
 if(facultyId.isBlank()){
     System.out.println("Error : cannot be empty");
@@ -155,7 +155,7 @@ if(facultyId.isBlank()){
 }
 
 
-System.out.print("Enter your College: ");
+System.out.print("Enter your college : ");
 String college = in.nextLine();
 if (college.trim().isBlank()) {
     System.out.println("Error please put a value:");
@@ -318,10 +318,10 @@ Faculty findFacultyAccount(String name){
   //Login Method  
 Person login(){
     
-    System.out.println("Enter your username : ");
+    System.out.print("Enter your username : ");
     String username = in.nextLine();
 
-    System.out.println("Enter your password : ");
+    System.out.print("Enter your password : ");
     String password = in.nextLine();
    
     StudentNode nod = head;

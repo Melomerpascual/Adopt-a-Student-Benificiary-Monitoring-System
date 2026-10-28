@@ -67,7 +67,7 @@ void changeContactNumber(){
     boolean checker =false;
     do{
      
-    System.out.println("Enter your new mobile number : ");
+    System.out.println("Enter your new contact number : ");
     String mobile=in.nextLine();
     if (mobile.isBlank()) {
         System.out.println("Error please put a value");
@@ -107,8 +107,9 @@ return this.password;
 }
 
 void viewInfo(){
-    System.out.println("---------------------");
-   System.out.println(" Personal Information ");
+    System.out.println("__________________________");
+   System.out.println("    PERSONAL INFORMATION    ");
+    System.out.println("__________________________");
    System.out.println("Name : " + this.firstName+ " " + this.middleName +" "+this.lastName); 
    System.out.println("Contact Number : " + this.contactnumber);
 }

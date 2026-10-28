@@ -74,7 +74,7 @@ void viewInfo(){
     System.out.println("Section : " + this.section);
     System.out.println("Year : " + this.year);
     System.out.println("Adopters : " + this.adopters);
-    System.out.println("---------------------------");
+    System.out.println("__________________________");
 }
 
 //change your college details 
@@ -114,6 +114,7 @@ System.out.println("Invalid input please put something ");
 
 
 void removeHelpNeed(){
+    System.out.println("Help Removed Succesfully");
     this.helpNeed="";
 }
 }

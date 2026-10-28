@@ -14,7 +14,7 @@ int choose;
 try{
   do {
     System.out.println("""     
-      __________________
+      ___________________
       ****EduNet care****
       [1] Create a account
       [2] Login
@@ -37,17 +37,20 @@ switch (choose){
 
      while(choice!=1){
       System.out.println("""
-        ----STUDENT DASHBOARD----
-        [1] Exit
-        [2] View your account
-        [3] Search
-        [4] Apply to faculty
-        [5] Change information
-        [6] View my application
-        [7] Remove help need
-        [8] Create help need
-        --------------------------""");
-      System.out.print("Enter your choice :");
+      __________________________
+       
+           STUDENT DASHBOARD
+      __________________________  
+        1. Exit
+        2. View your account
+        3. Search
+        4. Apply to faculty
+        5. Change information
+        6. View my application
+        7. Remove help need
+        8. Create help need
+       __________________________""");
+      System.out.print("Enter your choice : ");
       choice = readNumber(input);
   
       switch (choice){
@@ -84,15 +87,16 @@ switch (choose){
         while(in!=9){
          System.out.print("""
           What information do you want to change ? 
-          [1] Change college
-          [2] Change program  
-          [3] Change section 
-          [4] Change password 
-          [5] Contactnumber 
-          [6] Change First Name
-          [7] Change Last Name
-          [8] Change Middle Name
-          [9] Exit  """);
+          1. Change college
+          2. Change program  
+          3. Change section 
+          4. Change password 
+          5. Contactnumber 
+          6. Change First Name
+          7. Change Last Name
+          8. Change Middle Name
+          9. Exit  """);
+         System.out.print("Enter your choice : ");
 
          in = readNumber(input);
          switch (in){
@@ -155,13 +159,18 @@ switch (choose){
   Faculty faculty = (Faculty)user;    
 while (choice!=1) { 
     System.out.println("""
-  [1] Exit
-  [2] View your account
-  [3] Search
-  [4] Change information 
-  [5] View Applicants
-  [6] Accept
-  [7] Finish Adoption""" );
+      __________________________
+       
+           FACULTY DASHBOARD
+      __________________________  
+  1. Exit
+  2. View your account
+  3. Search
+  4. Change information 
+  5. View Applicants
+  6. Accept
+  7. Finish Adoption""" );
+  System.out.print("Enter your choice : ");
   choice = readNumber(input);
  
   switch (choice){
@@ -186,14 +195,15 @@ while (choice!=1) {
    while(ch!=4){ 
    
    System.out.println("""
-    Please choose  what you want to change 
-    [1]change password 
-    [2] Contactnumber
-    [3] College
-    [4] Exit
-    [5]Change First Name
-    [6] Change Last Name
-    [7] Change Middle Name""" );
+    Please choose what you want to change 
+    1. Change password 
+    2. Contact Number
+    3. College
+    4. Exit
+    5. Change First Name
+    6. Change Last Name
+    7. Change Middle Name""" );
+    System.out.print("Enter your choice : ");
    ch = readNumber(input);
    
    switch (ch){
