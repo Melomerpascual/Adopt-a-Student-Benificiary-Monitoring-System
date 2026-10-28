@@ -18,7 +18,6 @@ try{
       ****EduNet care****
       [1] Create a account
       [2] Login
-      
       ___________________
       """);
     choose=input.nextInt();    
@@ -38,6 +37,7 @@ switch (choose){
 
      while(choice!=1){
       System.out.println("""
+        ----STUDENT DASHBOARD----
         [1] Exit
         [2] View your account
         [3] Search
@@ -45,7 +45,8 @@ switch (choose){
         [5] Change information
         [6] View my application
         [7] Remove help need
-        [8] Create help need""");
+        [8] Create help need
+        --------------------------""");
       System.out.print("Enter your choice :");
       choice = readNumber(input);
   
@@ -91,7 +92,8 @@ switch (choose){
           [6] Change First Name
           [7] Change Last Name
           [8] Change Middle Name
-          [9] Exit """);
+          [9] Exit  """);
+
          in = readNumber(input);
          switch (in){
          

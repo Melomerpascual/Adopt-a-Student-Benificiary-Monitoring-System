@@ -41,19 +41,23 @@ String getApplication(){
 }
 
 void setApplication(String name){
+    this.application="";
     this.application=name;
 }
 
 
 void setApplicationStatus(String status){
+    this.applicationStatus="";
     this.applicationStatus=status;
 }
 
 String getApplicationStatus(){
+    this.applicationStatus="";
 return this.applicationStatus;
 }
 
  void setAdopters(String name){
+    
     this.adopters=name;
 }
 
@@ -70,24 +74,28 @@ void viewInfo(){
     System.out.println("Section : " + this.section);
     System.out.println("Year : " + this.year);
     System.out.println("Adopters : " + this.adopters);
+    System.out.println("---------------------------");
 }
 
 //change your college details 
 void changeCollege(){
 System.out.println("Enter you college name : ");
 String mycollege = in.nextLine();
+this.college="";
 this.college=mycollege;
 }
 //Change your current program
 void changeProgram(){
 System.out.println("Enter the program you changes into : ");
 String prog = in.nextLine();
+this.program="";
 this.program=prog;
 }
 
 void changeSection(){
 System.out.println("Enter your new Section : ");
 String mysection = in.nextLine();
+this.section ="";
 this.section=mysection;
 }
 //student define what kind of help they needed

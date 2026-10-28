@@ -127,19 +127,19 @@ System.out.println("Error : cannot be empty");
     
     
     else if (input==2){
-   System.out.println("Enter your first name : ");
+   System.out.print("Enter your first name : ");
     String firstname = in.nextLine();
  if(firstname.trim().isBlank()){
         System.out.println("Error : cannot be empty");
         break;
       }
-    System.out.println("Enter your last name : ");
+    System.out.print("Enter your last name : ");
     String lastname = in.nextLine();
       if(lastname.trim().isBlank()){
         System.out.println("Error : cannot be empty");
         break;
       }
-    System.out.println("Enter your middle name : ");
+    System.out.print("Enter your middle name : ");
     String middlename=in.nextLine();
 if(middlename.isBlank()){
 System.out.println("Error : cannot be empty");
@@ -147,7 +147,7 @@ System.out.println("Error : cannot be empty");
 }
 
 
-System.out.println("Enter your faculty Id");
+System.out.print("Enter your faculty Id :");
 String facultyId=in.nextLine();
 if(facultyId.isBlank()){
     System.out.println("Error : cannot be empty");
@@ -155,14 +155,14 @@ if(facultyId.isBlank()){
 }
 
 
-System.out.println("Enter your College: ");
+System.out.print("Enter your College: ");
 String college = in.nextLine();
 if (college.trim().isBlank()) {
     System.out.println("Error please put a value:");
     break;
 }
 
-    System.out.println("Username : ");
+    System.out.print("Username : ");
     String username = in.nextLine();
    
 if(username.trim().isBlank()){
@@ -172,13 +172,13 @@ System.out.println("Error : cannot be empty");
     System.out.println("Error : username taken");
     break;
 }
-    System.out.println("Password : ");
+    System.out.print("Password : ");
     String password = in.nextLine();
     if(password.trim().isBlank()){
 System.out.println("Error : cannot be empty");
         break;
 }
-    System.out.println("Enter your contact number : ");
+    System.out.print("Enter your contact number : ");
     String contactnumber = in.nextLine();
     if(!contactnumber.matches("[0-9]{11}")){
      System.out.println("Error please put a valid number ");

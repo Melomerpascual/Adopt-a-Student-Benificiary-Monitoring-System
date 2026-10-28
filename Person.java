@@ -73,6 +73,7 @@ void changeContactNumber(){
         System.out.println("Error please put a value");
         checker=true;
     }else if (mobile.matches("[0-9]{11}")) {
+        this.contactnumber="";
    this.contactnumber=mobile;  
    checker=false;
 }else{
@@ -106,6 +107,7 @@ return this.password;
 }
 
 void viewInfo(){
+    System.out.println("---------------------");
    System.out.println(" Personal Information ");
    System.out.println("Name : " + this.firstName+ " " + this.middleName +" "+this.lastName); 
    System.out.println("Contact Number : " + this.contactnumber);

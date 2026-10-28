@@ -1,4 +1,3 @@
-import java.util.Scanner;
 class Faculty extends Person {
 private String college ; 
 private String facultyId;
@@ -45,6 +44,7 @@ void viewInfo(){
     System.out.println("College :" + this.college);
     System.out.println("Faculty id :" + facultyId);
     System.out.println("Adoption Information :"+ adoptedStudent);
+    System.out.println("--------------------------------------");
 }
 
 
